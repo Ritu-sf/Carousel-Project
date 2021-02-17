@@ -1,0 +1,11 @@
+<div>
+<span  style="height: 200px; width: 100px;" style="display: inline-flex;">
+    <app-usercard *ngIf = "currentPage >=0" [useName]="userResponse[currentPage].login"   [userType]="userResponse[currentPage].type" [userImageURL]="userResponse[currentPage].avatar_url" (thumbnailEmit$)="emitThumbnail($event)"> </app-usercard>
+    <app-usercard *ngIf = "currentPage >=0" [useName]="userResponse[currentPage+1].login" [userType]="userResponse[currentPage+1].type" [userImageURL]="userResponse[currentPage+1].avatar_url" (thumbnailEmit$)="emitThumbnail($event)"> </app-usercard>
+    <app-usercard *ngIf = "currentPage >=0" [useName]="userResponse[currentPage+2].login" [userType]="userResponse[currentPage+2].type" [userImageURL]="userResponse[currentPage+2].avatar_url" (thumbnailEmit$)="emitThumbnail($event)"> </app-usercard>
+</span>
+</div>
+<span></span>
+<button (click) = nextPagination()> Previous</button>
+<button (click) = nextPagination()> Next</button>
+
